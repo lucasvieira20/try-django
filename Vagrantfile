@@ -26,7 +26,6 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.provision :shell, path: "bootstrap.sh", args: PROJECT_CODENAME
   
   config.vm.network "private_network", ip: "192.168.33.10"
   
@@ -71,4 +70,6 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
+
+  config.vm.provision "shell", path: "bootstrap.sh"
 end
