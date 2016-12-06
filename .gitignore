@@ -1,1 +1,5 @@
-/django-vb
+/bin
+/include
+/lib
+/local
+pip-selfcheck.json
