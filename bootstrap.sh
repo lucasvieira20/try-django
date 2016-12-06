@@ -10,7 +10,8 @@ sudo apt-get install python-pip
 sudo pip install virtualenv
 virtualenv django-vb
 
-#Active VirtualEnv
+#Active Virtual Env
 source django-vb/bin/activate
 
 #Install Django
+pip install django
