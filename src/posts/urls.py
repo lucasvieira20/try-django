@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .views import(
+    posts_list,
 	posts_create,
 	posts_detail,
 	posts_update,
@@ -9,10 +10,10 @@ from .views import(
 )
 
 urlpatterns = [
-    url(r'^$', "posts.views.posts_list"),
+    url(r'^$', posts_list, name="list"),
     url(r'^create/$', posts_create),
     url(r'^(?P<id>\d+)/$', posts_detail, name='detail'),
     url(r'^(?P<id>\d+)/edit/$', posts_update, name='update'),
-    url(r'^delete/$', posts_delete),
+    url(r'^(?P<id>\d+)/delete/$', posts_delete),
     # url(r'^posts/$', "<appname>.views.<function_name>"),
 ]
