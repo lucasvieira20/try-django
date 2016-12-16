@@ -5,11 +5,14 @@
 {% endblock head_title%} 
 
 {%block content %}
-
-<h1>{{instance.title}}</h1>
-{{instance.content}}
-{{instance.timestamp}}
-{{instance.updated}}
-{{instance.id}}
+<div class="col-sm-9 col sm-offset-3">
+	<h1>{{instance.title}} <small>{{instance.timestamp}}</small></h1>
+	{% if instance.image %}
+		<img src="{{instance.image.url }}" class="img-responsive" alt="">
+    {% endif %}
+	
+	{{instance.content | linebreaks}}
+	
+</div>
 
 {% endblock content %}
